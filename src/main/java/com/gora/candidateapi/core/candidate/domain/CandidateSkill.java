@@ -29,4 +29,15 @@ public class CandidateSkill {
 
     @NonNull
     private String levelSkill;
+
+    public CandidateSkill(CandidateSkillBuilder candidateSkillBuilder){
+        this.candidateSkillId = candidateSkillBuilder.candidateSkillId;
+        this.candidateId = candidateSkillBuilder.candidateId;
+        this.nameSkill = candidateSkillBuilder.nameSkill;
+        this.levelSkill = candidateSkillBuilder.levelSkill;
+    }
+
+    public static CandidateSkillBuilder builder() {
+        return new CandidateSkillBuilder();
+    }
 }

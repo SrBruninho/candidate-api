@@ -38,4 +38,19 @@ public class Candidate extends AuditableEntity {
     @JoinColumn(name = "candidateId", referencedColumnName = "candidateId", nullable = false, insertable = false)
     private List<CandidateSkill> candidateSkills;
 
+    public Candidate(CandidateBuilder candidateBuilder){
+        this.candidateId = candidateBuilder.candidateId;
+        this.firstName = candidateBuilder.firstName;
+        this.surname = candidateBuilder.surname;
+        this.email = candidateBuilder.email;
+        this.telephone = candidateBuilder.telephone;
+        this.celphone = candidateBuilder.celphone;
+        this.located = candidateBuilder.located;
+        this.candidateSkills = candidateBuilder.candidateSkills;
+    }
+
+    public static CandidateBuilder builder() {
+        return new CandidateBuilder();
+    }
+
 }

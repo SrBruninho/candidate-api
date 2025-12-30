@@ -17,12 +17,12 @@ import static org.springframework.web.util.UriComponentsBuilder.fromPath;
 @RequestMapping(path = CandidateController.PATH, produces = APPLICATION_JSON_VALUE)
 public class CandidateController {
 
-    public static final String PATH = "/api/v1/candidate";
+    public static final String PATH = "/api/v1/candidates";
 
     private final CandidateService candidateService;
 
     @PostMapping
-    public ResponseEntity<CandidateId> registerCandidate(CreateCandidateDTO createCandidateDTO){
+    public ResponseEntity<CandidateId> create(CreateCandidateDTO createCandidateDTO){
         var candidateId = candidateService.registerCandidate(createCandidateDTO);
 
         return ResponseEntity.created(
